@@ -102,3 +102,36 @@ Open ConEmu, and go to `Settings`. Navigate on the left-menu: `Startup > Tasks`.
 1. Add a name for the task. Anything will suffice. I used `bash::ubuntu` to group Ubuntu into the bash tasks.
 1. On `Task parameters` choose an icon for the task. I picked the Ubuntu icon app that is buried under some very long path. but any .ico will work. You can leave it blank if you don't care.
 1. For the `command` use this `%windir%\system32\bash.exe ~ -cur_console:p`. This will start bash under the user home directory. Since we already configured `zsh` to run by default, this is enough.
+
+## Installing ChromaTerm--
+I wanted to use ChromaTerm to get highlighting when using ssh to access my Cisco devices at work. You will need some dependencies in order to compile the source code. Run the following command to install them if they are needed:
+```bash
+sudo apt install build-essential gcc pcre2-utils libpcre2-dbg libpcre2-dev
+```
+When the dependencies are installed proceed with the following to install and setup ChromaTerm--:
+```bash
+git clone https://github.com/hSaria/ChromaTerm--.git
+cd chromaterm/src/
+./configure
+make
+make install
+```
+In my case the compiled binary `ct` was, after creation in `/usr/local/bin`, owned by root so I changed that with:
+```bash
+sudo chown 'user':'group' /usr/local/bin/ct
+```
+
+You should now be able to verify that ChromaTerm is working by issuing:
+```bash
+echo "Jul 14 12:28:19: Message from 1.2.3.4" | ct
+```
+The out put should be colored.
+
+## Seting up Cisco SSH Highlighting
+A ChromaTerm config file will be created in users home folder `~` but I used the one provided by user ´vista_df´ (found in the following [Reddit thread](https://www.reddit.com/r/networking/comments/89e7ms/cisco_syntaxkeyword_highlighting_on_linux/)). [Direct link](https://gist.github.com/vista-/88c90110dd320be4c78da4f55783b41a).
+I have also added that file to this repo to ensure that it doesn't disappear.
+
+Rename the original `.chromatermrc` and copy the on in this repo to your home folder by issuing the following when in you homefolder (`cd ~`):
+```bash
+mv .chromatermrc && 
+```
