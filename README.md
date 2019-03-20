@@ -97,11 +97,23 @@ The directory colors for zsh is awful. If you followed along, by now you should 
     eval `dircolors ~/.dircolors`
     ```
 
-## Setting Bash on Ubuntu task in ConEmu
-Open ConEmu, and go to `Settings`. Navigate on the left-menu: `Startup > Tasks`. There, click at the `+` button at the bottom.
+## Installing cmder.
+This step is done on your Windows computer. Go to [cmder site](https://cmder.net/) and download a suitable version (I chose full version). Follow the instructions for installing cmder.
+
+## Setting Bash on Ubuntu task in cmder
+Open cmder, and go to `Settings`. Navigate on the left-menu: `Startup -> Tasks`. There, click at the `+` button at the bottom.
 1. Add a name for the task. Anything will suffice. I used `bash::ubuntu` to group Ubuntu into the bash tasks.
 1. On `Task parameters` choose an icon for the task. I picked the Ubuntu icon app that is buried under some very long path. but any .ico will work. You can leave it blank if you don't care.
 1. For the `command` use this `%windir%\system32\bash.exe ~ -cur_console:p`. This will start bash under the user home directory. Since we already configured `zsh` to run by default, this is enough.
+
+### Tweaking cmder
+I have made some adjustments to make commander better fit my style. The following has been done:
+
+##### Mark the active tab
+In cmder go to `Settings -> General -> Tab bar` and under ***Console*** change whatever is there to `%m⬤m (%c) %m m% %s`. This will add a black dot to the active tab and also the tab number in parentheses followed by the title (ie. the folder you are in or the host that you have ssh:ed to).
+
+##### Change behaviour when creating new tabs
+Every time I opened more than two tabs I got a UAC prompt to allow it (not running cmder as admin). To get rid of this slightly annoying behaviour I changed ***Confirm creating new console/tab*** from ticked to unticked under `Settings -> General -> Confirm`
 
 ## Installing ChromaTerm--
 I wanted to use ChromaTerm to get highlighting when using ssh to access my Cisco devices at work. You will need some dependencies in order to compile the source code. Run the following command to install them if they are needed:
@@ -152,18 +164,5 @@ If you, like me, did not have a .zshenv file simply create it in you users home 
 touch ~/.zshenv
 ```
 With this function you will be able to use `ssh` with `ct` by issuing `ctssh 8.8.8.8` which is a bit easier.
-
-## Installing cmder.
-This step is done on your Windows computer. Go to [cmder site](https://cmder.net/) and download a suitable version (I chose full version). Follow the instructions for installing cmder.
-
-### Tweaking cmder
-I have made some adjustments to make commander better fit my style. The following has been done:
-
-##### Mark the active tab
-In cmder go to *Settings -> General -> Tab bar* and under *Console* change whatever is there to `%m⬤m (%c) %m m% %s`. This will add a black dot to the active tab and also the tab number in parentheses followed by the title (ie. the folder you are in or the host that you have ssh:ed to).
-
-##### Change behaviour when creating new tabs
-Every time I opened more than two tabs I got a UAC prompt to allow it (not running cmder as admin). To get rid of this slightly annoying behaviour I changed ***Confirm creating new console/tab*** from ticked to unticked under *Settings -> General -> Confirm*
-
 
 
