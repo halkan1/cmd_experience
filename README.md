@@ -100,7 +100,7 @@ The directory colors for zsh is awful. If you followed along, by now you should 
 ## Installing cmder.
 This step is done on your Windows computer. Go to [cmder site](https://cmder.net/) and download a suitable version (I chose full version). Follow the instructions for installing cmder.
 
-## Setting Bash on Ubuntu task in cmder
+### Setting Bash on Ubuntu task in cmder
 Open cmder, and go to `Settings`. Navigate on the left-menu: `Startup -> Tasks`. There, click at the `+` button at the bottom.
 1. Add a name for the task. Anything will suffice. I used `bash::ubuntu` to group Ubuntu into the bash tasks.
 1. On `Task parameters` choose an icon for the task. I picked the Ubuntu icon app that is buried under some very long path. but any .ico will work. You can leave it blank if you don't care.
@@ -153,13 +153,13 @@ Now you could use ChromaTerm like this:
 ```bash
 ssh 8.8.8.8 | ct
 ```
-And it will work but it would be nicer to create an alias for it. To do so add the following to your .zshenv file:
+And it will work but it would be nicer to create an alias for it. To do so add the following to your `.zshenv file`:
 ```bash
 function ctssh {
     ssh $@ | ct 
 }
 ```
-If you, like me, did not have a .zshenv file simply create it in you users home directory.
+If you, like me, did not have a `.zshenv` file simply create it in you users home directory.
 ```bash
 touch ~/.zshenv
 ```
