@@ -26,7 +26,7 @@ Now that we have a working WSL installation, lets install zsh.
 sudo apt-get install zsh
 ```
 
-After installing zsh type **zsh** and you will be asked to choose some configuration. This will be done via oh my zsh during installation so choose option **0** for know to create the config file and prevent this message form showing up again.
+After installing zsh type `zsh` and you will be asked to choose some configuration. This will be done via oh my zsh during installation so choose option **0** for know to create the config file and prevent this message form showing up again.
 
 ## Install oh my zsh
 Git should be installed by default but you can verify that by typing **git --version**. If you get a reply you do not need to install git.
@@ -87,15 +87,15 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
 The directory colors for zsh is awful. If you followed along, by now you should have an ugly yellow or dark blue background on folders when **ls/ll**. Luckily, we can change that by installing a Solarized Color Theme from [here](https://github.com/seebi/dircolors-solarized). Follow these steps:
 1. Pick a theme from the GitHub repo (I'm using dircolors.ansi-dark since I use a dark shell).
 1. Download the file making sure to put it in the user's home:
-```bash
-# using dircolors.ansi-dark
-curl https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-dark --output ~/.dircolors
-```
+    ```bash
+    # using dircolors.ansi-dark
+    curl https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-dark --output ~/.dircolors
+    ```
 1. Edit your **~/.zshrc** and paste this:
-```bash
-## set colors for LS_COLORS
-eval `dircolors ~/.dircolors`
-```
+    ```bash
+    # set colors for LS_COLORS
+    eval `dircolors ~/.dircolors`
+    ```
 
 ## Setting Bash on Ubuntu task in ConEmu
 Open ConEmu, and go to **Settings**. Navigate on the left-menu: **Startup > Tasks**. There, click at the **+** button at the bottom.
