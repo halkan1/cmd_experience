@@ -17,8 +17,6 @@ Follow the guide [here](https://docs.microsoft.com/en-us/windows/wsl/install-win
 After WSL is installed dont forget to run:
 ```bash
 sudo apt-get update
-```
-```bash
 sudo apt-get upgrade
 ```
 
@@ -69,13 +67,13 @@ Save it and restart your Ubuntu shell again.
 ## Installing missing Powerline Fonts
 We need to install the Powerline fonts in our Windows to make the agnoster theme work. Follow these steps:
 1. Clone the powerline repository on Windows
-        ```bash
-        git clone https://github.com/powerline/fonts.git
-        ```
+    ```bash
+    git clone https://github.com/powerline/fonts.git
+    ```
 1. Open an admin PowerShell, navigate to the root of the repo and run this:
-        ```powershell
-        .\install.ps1
-        ```
+    ```powershell
+    .\install.ps1
+    ```
 This will install all the fonts on your Windows. You might get an error from PowerShell blocking you from running the script. You will then need to open a powershell prompt as admin and enter:
 ```powershell
 Get-ExecutionPolicy
