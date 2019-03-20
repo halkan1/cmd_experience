@@ -159,10 +159,10 @@ This step is done on your Windows computer. Go to [cmder site](https://cmder.net
 ### Tweaking cmder
 I have made some adjustments to make commander better fit my style. The following has been done:
 
-###### Mark the active tab
+##### Mark the active tab
 In cmder go to *Settings -> General -> Tab bar* and under *Console* change whatever is there to `%m⬤m (%c) %m m% %s`. This will add a black dot to the active tab and also the tab number in parentheses followed by the title (ie. the folder you are in or the host that you have ssh:ed to).
 
-###### Change behaviour when creating new tabs
+##### Change behaviour when creating new tabs
 Every time I opened ore than two tabs I got a UAC prompt to allow it (not running cmder as admin). To get rid of this slightly annoying behaviour I changed `Confirm creating new console/tab` from ticked to unticked under *Settings -> General -> Confirm*
 
 
