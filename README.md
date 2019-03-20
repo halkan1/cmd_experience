@@ -46,7 +46,7 @@ This install script will clone the repo and reaplace the existing `~/.zshrc` wit
 First, we need to make sure `zsh` is executed by default for Bash on Ubuntu. This is not mandatory, but if not done you need to type `zsh` every time. For this, edit the .bashrc file with nano: `nano ~/.bashrc` and paste this right after the first comments:
 ```bash
 if test -t 1; then
-exec zsh
+    exec zsh
 fi
 ```
 Save it `Ctrl + shift X` and restart your Ubuntu shell. You should be on zsh by default now
@@ -133,5 +133,23 @@ I have also added that file to this repo to ensure that it doesn't disappear.
 
 Rename the original `.chromatermrc` and copy the on in this repo to your home folder by issuing the following when in you homefolder (`cd ~`):
 ```bash
-mv .chromatermrc && 
+mv .chromatermrc chromatermrc.bak && wget https://raw.githubusercontent.com/halkan1/cmd_experience/master/assets/.chromatermrc
 ```
+
+### Creating an function for ChromaTerm
+Now you could use ChromaTerm like this:
+```bash
+ssh 8.8.8.8 | ct
+```
+
+And it will work but it would be nicer to create an alias for it. To do so add the following to your .zshenv file:
+```bash
+function ctssh {
+    ssh $@ | ct 
+}
+```
+If you, like me, did not have a .zshenv file simply create it in you users home directory.
+```bash
+touch ~/.zshenv
+```
+With this function you will be able to use `ssh` with `ct` by issuing `ctssh 8.8.8.8` which is a bit easier.
