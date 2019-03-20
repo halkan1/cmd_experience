@@ -128,7 +128,7 @@ echo "Jul 14 12:28:19: Message from 1.2.3.4" | ct
 The out put should be colored.
 
 ## Seting up Cisco SSH Highlighting
-A ChromaTerm config file will be created in users home folder `~` but I used the one provided by user ´vista_df´ (found in the following [Reddit thread](https://www.reddit.com/r/networking/comments/89e7ms/cisco_syntaxkeyword_highlighting_on_linux/)). And also here is the [direct link](https://gist.github.com/vista-/88c90110dd320be4c78da4f55783b41a).
+A ChromaTerm config file will be created in users home folder `~` but I used the one provided by user `vista_df` (found in the following [Reddit thread](https://www.reddit.com/r/networking/comments/89e7ms/cisco_syntaxkeyword_highlighting_on_linux/)). And also here is the [direct link](https://gist.github.com/vista-/88c90110dd320be4c78da4f55783b41a).
 I have also added that file to this repo to ensure that it doesn't disappear.
 
 Rename the original `.chromatermrc` and copy the on in this repo to your home folder by issuing the following when in you homefolder (`cd ~`):
